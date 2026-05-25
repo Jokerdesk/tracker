@@ -38,10 +38,10 @@ app.post("/create-link", (req, res) => {
  res.json({
 
   link:
-  `http://localhost:3000/r/${code}`,
+  `https://tracker-gt1v.onrender.com/r/${code}`,
 
   dashboard:
-  `http://localhost:3000/stats/${code}`
+  `https://tracker-gt1v.onrender.com/stats/${code}`
 
  })
 
