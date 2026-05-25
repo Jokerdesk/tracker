@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>링크 생성기</title>
+
+</head>
+
+<body>
+
+<h1>내 링크 생성기</h1>
+
+<input
+id="url"
+placeholder="https://example.com"
+>
+
+<button onclick="makeLink()">
+
+생성
+
+</button>
+
+<div id="result">
+
+</div>
+
+<script>
+
+async function makeLink(){
+
+const url=
+document
+.getElementById("url")
+.value
+
+const res=
+await fetch(
+"/create-link",
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":
+"application/json"
+
+},
+
+body:
+JSON.stringify({
+
+url:url
+
+})
+
+}
+
+)
+
+const data=
+await res.json()
+
+document
+.getElementById(
+"result"
+)
+.innerHTML=
+
+`
+<a href="${
+data.link
+}">
+
+${data.link}
+
+</a>
+`
+
+}
+
+</script>
+
+</body>
+
+</html>
