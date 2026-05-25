@@ -30,7 +30,7 @@ app.post("/create-link", (req, res) => {
 
   res.json({
     link: `https://tracker-gt1v.onrender.com/r/${code}`,
-    dashboard: `https://tracker-gt1v.onrender.com/charles/${code}`
+    dashboard: `https://tracker-gt1v.onrender.com/stats/${code}`
   });
 });
 
